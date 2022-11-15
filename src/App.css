@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+.app{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: 'Neucha', cursive;
+}
+
+.appContent{
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+}
+
+.header{
+  width: 100%;
+  height: 12em;
+  display: flex;
+  justify-content: center;
+}
+
+.header > .text{
+  height: 100%;
+  color: black;
+  font-size: 65px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.generalPanel, .generalPanel_counters{
+  display: flex;
+  justify-content: space-between;
+}
+
+.TotalCounter{
+  font-size: 30px;
+  margin-right: 15px;
+}
