@@ -1,9 +1,23 @@
 import React from 'react'
+import './Components.css';
 
-const Button = () => {
-    
+interface Props{
+  text: string,
+  icon: string,
+  onClick: () => void;
+}
+
+const Button = ({text, icon, onClick} : Props) => {
+ 
   return (
-    <div>Button</div>
+    <div className='button panel' onClick={onClick}>
+      <img src={icon} />
+      {
+        text ? (
+          <span>{text}</span>
+        ) : ''
+      }
+    </div>
   )
 }
 

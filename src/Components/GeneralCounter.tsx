@@ -1,5 +1,7 @@
 import React from 'react'
 import './Components.css';
+import AngelPng from '../Images/angel.png'
+import DevilPng from '../Images/devil.png'
 
 interface Props extends goodProps, badProps{}
 
@@ -15,17 +17,17 @@ const GeneralCounter = ({totalGood, totalBad} : Props) => {
   if(totalGood !== undefined)
   {
     return (
-      <div>
-        <img src='https://github.com/Lo4d1ng/Grudge-Holder/blob/main/src/Images/emoji_placeholder.svg' />
-        <div>{totalGood}</div>
+      <div className='generalCounter'>
+        <img src={AngelPng} />
+        <span>{totalGood}</span>
       </div>
     )
   }
   else{
     return (
-      <div>
-        <img src='https://github.com/Lo4d1ng/Grudge-Holder/blob/main/src/Images/emoji_placeholder.svg'/>
-        <div>{totalBad}</div>
+      <div className='generalCounter'>
+        <img src={DevilPng} />
+        <span>{totalBad}</span>
       </div>
     )
   }
