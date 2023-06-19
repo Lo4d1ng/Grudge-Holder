@@ -1,0 +1,15 @@
+
+.generalCounter{
+    display: flex;
+    align-items: center;
+}
+
+.generalCounterIcon{
+    height: 3em;
+    width: 3em;
+    margin: 0 15px 0 15px;
+}
+
+.generalCounterText{
+    font-size: 30px;
+}

@@ -1,0 +1,7 @@
+.modalBlur{
+    filter: blur(8px);
+    -moz-filter: blur(8px);
+    -webkit-filter: blur(8px);
+    -o-filter: blur(8px);
+  }
+  

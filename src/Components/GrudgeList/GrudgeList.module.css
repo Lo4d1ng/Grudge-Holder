@@ -1,0 +1,9 @@
+.GrudgeList{
+    display: flex;
+    justify-content: space-evenly;
+    transition: flex-wrap 0.3s ease-in-out;
+    flex-wrap: wrap;
+    width: auto;
+    height: fit-content;
+    margin-top: 35px;
+}

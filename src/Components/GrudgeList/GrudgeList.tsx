@@ -1,33 +1,32 @@
-import { CounterBoxModel } from '../Model/GCounterBoxModel'
-import GrudgeBox from './GrudgeBox'
+import grudgeListCSS from  './GrudgeList.module.css';
+import GrudgeBox from '../GrudgeBox/GrudgeBox'
+import { useContext } from 'react';
+import Context from '../../context';
 
-interface Props{
-  allGrudgeBoxes: CounterBoxModel[],
-  setGrudgeBoxes: React.Dispatch<React.SetStateAction<CounterBoxModel[]>>;
-}
 
-const GrudgeList = ({allGrudgeBoxes, setGrudgeBoxes} : Props) => {
+const GrudgeList = () => {
+  const grudgeListModel = useContext(Context);
 
   function handleSetEvilScore(id: number, score: number) {
-    setGrudgeBoxes(
-      allGrudgeBoxes.map((box) =>
+    grudgeListModel?.setGrudgeBoxes(
+      grudgeListModel?.allGrudgeBoxes.map((box) =>
           box.Id === id ? { ...box, BadScore: score} : box
       )
     )
   }
 
   function handleSetGoodScore(id: number, score: number) {
-    setGrudgeBoxes(
-      allGrudgeBoxes.map(
+    grudgeListModel?.setGrudgeBoxes(
+      grudgeListModel?.allGrudgeBoxes.map(
         (box) => box.Id === id ? { ...box, GoodScore: score} : box
       )
     )
   }
 
   return (
-    <div className='GrudgeList'>
+    <div className={grudgeListCSS.GrudgeList}>
       {
-        allGrudgeBoxes.map((box) => (
+        grudgeListModel?.allGrudgeBoxes.map((box) => (
           <GrudgeBox 
             Id={box.Id}
             PersonName = {box.PersonName}

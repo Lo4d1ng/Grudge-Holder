@@ -1,5 +1,6 @@
 import React from 'react'
-import './Components.css';
+import componentCSS from '../Components.module.css';
+import buttonCSS from './Button.module.css'
 
 interface Props{
   text: string,
@@ -10,7 +11,7 @@ interface Props{
 const Button = ({text, icon, onClick} : Props) => {
  
   return (
-    <div className='button panel' onClick={onClick}>
+    <div className={`${buttonCSS.button} ${componentCSS.panel}`} onClick={onClick}>
       <img src={icon} />
       {
         text ? (

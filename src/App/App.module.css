@@ -1,24 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
-
-body{
-  background: rgb(0,0,0);
-  background: linear-gradient(150deg, rgba(0,0,0,0) 29%, rgba(70,187,255,0.39539565826330536) 100%);}
-
-img{
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */  
-}
-
-input{
-  height: 40px;
-  width: 80%;
-  border-radius: 10px;
-  border-color: #46bbff50;
-  color: #399ad3;
-  font-size: 30px;
-  padding: 0 15px 0 15px;
-}
 
 .app{
   width: 100vw;
@@ -44,7 +23,7 @@ input{
   justify-content: center;
 }
 
-.header > .text{
+.headerText{
   height: 100%;
   color: black;
   font-size: 65px;

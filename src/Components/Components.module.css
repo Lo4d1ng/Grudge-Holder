@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+.panel{
+    background: white;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    box-shadow:  5px 5px 10px #c4c4c4,
+    -5px -5px 10px #ffffff00;
+    border-radius: 10px;
+
+    filter: blur(0px);
+    -moz-filter: blur(0px);
+    -webkit-filter: blur(0px);
+    -o-filter: blur(0px);
+}
+
+.modal{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+
+.newGrudgeWindow{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: calc(45% - 9em);
+    left: calc(50% - 12.5em);
+    width: 25em;
+    height: 9em;
+    z-index: 2;
+}
+
+.newGrudgeWindowModalActionWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+

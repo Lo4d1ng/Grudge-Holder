@@ -1,4 +1,4 @@
-export interface CounterBoxModel {
+export interface ICounterBoxModel {
     Id: number
     PersonName: string
     BadScore: number
