@@ -12,19 +12,20 @@ import NewGrudgePanel from '../Components/Modal/NewGrudgePanel';
 
 
 const App = () => {
-  const [allGrudgeBoxes, setGrudgeBoxes] = useState<ICounterBoxModel[]>([]);
-  const [totalGood, setTotalGood] = useState<number>(0);
-  const [totaBad, setTotalBad] = useState<number>(0);
+  const [allGrudgeBoxes, setGrudgeBoxes] = useState<ICounterBoxModel[]>([])
+  const [totalGood, setTotalGood] = useState<number>(0)
+  const [totaBad, setTotalBad] = useState<number>(0)
 
+  const [isFullScreenModalOpen, setIsFullScreenModalOpen] = useState(false)
   // New Grudge Modal Window
-  const [isNewGrudgeModalOpen, setIsNewGrudgeModalOpen] = useState(false);
+  const [isNewGrudgeModalOpen, setIsNewGrudgeModalOpen] = useState(false)
 
   const handleOpenNewGrudgeModal = () => {
-    setIsNewGrudgeModalOpen(true);
+    setIsNewGrudgeModalOpen(true)
   };
 
   const handleCloseNewGrudgeModal = () => {
-    setIsNewGrudgeModalOpen(false);
+    setIsNewGrudgeModalOpen(false)
   };
 
   useEffect(() => {
@@ -32,12 +33,12 @@ const App = () => {
     setTotalGood(allGrudgeBoxes.reduce((total, currVal) => total + currVal.GoodScore, 0))
   }, [allGrudgeBoxes])
 
-  const AppData = {allGrudgeBoxes, setGrudgeBoxes};
+  const AppData = {allGrudgeBoxes,setGrudgeBoxes, setIsFullScreenModalOpen};
 
   return (
     <useAppModelContext.Provider value={AppData}>
     <div id="portal-root"></div>
-    <div className={`${isNewGrudgeModalOpen ? globalCSS.modalBlur : ''}`}>
+    <div className={`${isFullScreenModalOpen ? globalCSS.modalBlur : ''}`}>
       <div className={css.app}>
         <div className={css.appContent}>
           <div className={css.header}>

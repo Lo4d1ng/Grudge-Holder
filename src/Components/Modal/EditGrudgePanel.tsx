@@ -7,24 +7,32 @@ import componentCSS from '../Components.module.css';
 import Context from '../../context';
 
 interface IProps{
+  id: number
   handleCloseModal: () => void
 }
 
-const NewGrudgePanel = ({handleCloseModal} : IProps) => {  
-    const AppModel = useContext(Context);
+const NewGrudgePanel = ({id, handleCloseModal} : IProps) => {  
+    const AppModel = useContext(Context)
     const personNameRef = useRef<HTMLInputElement>(null)
   
     useEffect(() => {
-      personNameRef.current?.focus();
+      if(!personNameRef.current) { return; }
+
+      personNameRef.current.focus()
+      personNameRef.current.value = AppModel?.allGrudgeBoxes.find(box => box.Id == id)?.PersonName ?? ""
+
       AppModel?.setIsFullScreenModalOpen(true)
 
       return(() => {AppModel?.setIsFullScreenModalOpen(false)})
     })
 
     function handleConfirm() {
-        if(!personNameRef.current?.value) { return; }
-        
-        AppModel?.setGrudgeBoxes([...AppModel.allGrudgeBoxes, { Id: AppModel.allGrudgeBoxes.length + 1, PersonName: personNameRef.current?.value ?? "", BadScore: 0, GoodScore: 0}])
+        if(!personNameRef.current) { return; }
+
+        const updatedGrudgeBoxes = AppModel?.allGrudgeBoxes.map((box) => ({...box, PersonName: box.Id == id ? personNameRef.current?.value ?? "" : box.PersonName}))
+        if(updatedGrudgeBoxes != undefined)
+          AppModel?.setGrudgeBoxes(updatedGrudgeBoxes)
+
         handleCloseModal();
     }
 

@@ -5,3 +5,11 @@
     -o-filter: blur(8px);
   }
   
+  
+.visible{
+  opacity:1 !important;
+}
+
+.hidden{
+  opacity:0 !important;
+}

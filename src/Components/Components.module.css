@@ -6,14 +6,21 @@
     align-items: center;
     height: fit-content;
     width: fit-content;
-    box-shadow:  5px 5px 10px #c4c4c4,
-    -5px -5px 10px #ffffff00;
     border-radius: 10px;
-
     filter: blur(0px);
     -moz-filter: blur(0px);
     -webkit-filter: blur(0px);
     -o-filter: blur(0px);
+}
+
+.panelShadow{
+    box-shadow:  5px 5px 10px #c4c4c4,
+    -5px -5px 10px #ffffff00;
+}
+
+.panelShadowOnHover:hover{
+    box-shadow:  5px 5px 10px #c4c4c4,
+    -5px -5px 10px #ffffff00;
 }
 
 .modal{
@@ -26,7 +33,6 @@
     left: 0;
     z-index: 2;
 }
-
 
 .newGrudgeWindow{
     position:absolute;

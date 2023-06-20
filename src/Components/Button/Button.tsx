@@ -3,15 +3,19 @@ import componentCSS from '../Components.module.css';
 import buttonCSS from './Button.module.css'
 
 interface Props{
-  text: string,
-  icon: string,
-  onClick: () => void;
+  text: string
+  icon: string
+  
+  onlyHoverShadow?: boolean
+  onClick: () => void
 }
 
-const Button = ({text, icon, onClick} : Props) => {
+const Button = ({text, icon, onClick, onlyHoverShadow = false} : Props) => {
  
   return (
-    <div className={`${buttonCSS.button} ${componentCSS.panel}`} onClick={onClick}>
+    <div className={`${buttonCSS.button} ${componentCSS.panel} ${onlyHoverShadow ? componentCSS.panelShadowOnHover : componentCSS.panelShadow }`} 
+         onClick={onClick}
+    >
       <img src={icon} />
       {
         text ? (

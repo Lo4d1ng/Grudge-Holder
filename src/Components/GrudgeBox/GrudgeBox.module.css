@@ -3,13 +3,13 @@
     display: flex;
     flex-direction: column;
     width: 350px;
-    height: 140px;
+    height: 150px;
     margin: 1em;
 }
 
 .gbheader{
     display: flex;
-    height: 60px;
+    height: 70px;
     font-size: 30px;
     align-items: flex-end;
     justify-content: center;
@@ -52,8 +52,4 @@
 .gbScoreButton{
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
-}
-
-.gbScoreButton.visible{
-    opacity:1;
 }
