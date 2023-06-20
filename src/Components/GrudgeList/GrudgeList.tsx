@@ -5,19 +5,19 @@ import Context from '../../context';
 
 
 const GrudgeList = () => {
-  const grudgeListModel = useContext(Context);
+  const appModel = useContext(Context);
 
   function handleSetEvilScore(id: number, score: number) {
-    grudgeListModel?.setGrudgeBoxes(
-      grudgeListModel?.allGrudgeBoxes.map((box) =>
+    appModel?.setGrudgeBoxes(
+      appModel?.allGrudgeBoxes.map((box) =>
           box.Id === id ? { ...box, BadScore: score} : box
       )
     )
   }
 
   function handleSetGoodScore(id: number, score: number) {
-    grudgeListModel?.setGrudgeBoxes(
-      grudgeListModel?.allGrudgeBoxes.map(
+    appModel?.setGrudgeBoxes(
+      appModel?.allGrudgeBoxes.map(
         (box) => box.Id === id ? { ...box, GoodScore: score} : box
       )
     )
@@ -26,7 +26,7 @@ const GrudgeList = () => {
   return (
     <div className={grudgeListCSS.GrudgeList}>
       {
-        grudgeListModel?.allGrudgeBoxes.map((box) => (
+        appModel?.allGrudgeBoxes.map((box) => (
           <GrudgeBox 
             Id={box.Id}
             PersonName = {box.PersonName}
