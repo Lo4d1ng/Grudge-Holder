@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import { ICounterBoxModel } from '../../Model/GCounterBoxModel';
+import { ICounterBoxModel } from '../../Model/ICounterBoxModel';
 import Button from '../Button/Button'
 import AddIcon from '../../Images/add.png'
 import closeIcon from '../../Images/cross.svg'

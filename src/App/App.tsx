@@ -4,7 +4,7 @@ import css from './App.module.css'
 import GrudgeList from '../Components/GrudgeList/GrudgeList'
 import GeneralCounter from '../Components/GeneralCounter/GeneralCounter'
 import Button from '../Components/Button/Button'
-import { ICounterBoxModel } from '../Model/GCounterBoxModel'
+import { ICounterBoxModel } from '../Model/ICounterBoxModel'
 import useAppModelContext from "../context"
 import AddIcon from '../Images/add.png'
 import Portal from '../Components/Modal/ModalPortal';

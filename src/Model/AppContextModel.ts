@@ -1,4 +1,4 @@
-import { ICounterBoxModel } from "./GCounterBoxModel"
+import { ICounterBoxModel } from "./ICounterBoxModel"
 
 export default interface IAppContextModel{
     setGrudgeBoxes: React.Dispatch<React.SetStateAction<ICounterBoxModel[]>>

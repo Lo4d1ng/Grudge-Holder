@@ -3,7 +3,7 @@ import componentCSS from '../Components.module.css'
 import grudgeBoxCSS from './GrudgeBox.module.css'
 import globalCSS from '../../global.module.css'
 
-import { ICounterBoxModel } from '../../Model/GCounterBoxModel'
+import { ICounterBoxModel } from '../../Model/ICounterBoxModel'
 import Button from '../Button/Button'
 import AddIcon from "../../Images/add.png"
 import DevilPng from "../../Images/devil.png"
