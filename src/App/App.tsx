@@ -10,7 +10,6 @@ import AddIcon from '../Images/add.png'
 import Portal from '../Components/Modal/ModalPortal';
 import NewGrudgePanel from '../Components/Modal/NewGrudgePanel';
 
-
 const App = () => {
   const [allGrudgeBoxes, setGrudgeBoxes] = useState<ICounterBoxModel[]>([])
   const [totalGood, setTotalGood] = useState<number>(0)
@@ -33,38 +32,41 @@ const App = () => {
     setTotalGood(allGrudgeBoxes.reduce((total, currVal) => total + currVal.GoodScore, 0))
   }, [allGrudgeBoxes])
 
-  const AppData = {allGrudgeBoxes,setGrudgeBoxes, setIsFullScreenModalOpen};
+  const AppData = {allGrudgeBoxes, setGrudgeBoxes, setIsFullScreenModalOpen};
 
   return (
-    <useAppModelContext.Provider value={AppData}>
-    <div id="portal-root"></div>
-    <div className={`${isFullScreenModalOpen ? globalCSS.modalBlur : ''}`}>
-      <div className={css.app}>
-        <div className={css.appContent}>
-          <div className={css.header}>
-            <span className={css.headerText}>Grudge Counter</span>
-          </div>
-          <div className={css.generalPanel}>
-            <div className={css.generalPanel_counters}>
-              <span className={css.TotalCounter}>Total</span>
-              <GeneralCounter totalBad={totaBad} />
-              <GeneralCounter totalGood={totalGood} />
+    <>
+      <div id="portal-root"></div>
+      <div className={`${isFullScreenModalOpen ? globalCSS.modalBlur : ''}`}>
+        <div className={css.app}>
+        <useAppModelContext.Provider value={AppData}>
+          <div className={css.appContent}>
+            <div className={css.header}>
+              <span className={css.headerText}>Grudge Counter</span>
             </div>
-            <div style={{marginLeft: "1em"}}>
-              <Button text="Add New Grudge" icon={AddIcon} onClick={() => handleOpenNewGrudgeModal()} />
+            <div className={css.generalPanel}>
+              <div className={css.generalPanel_counters}>
+                <span className={css.TotalCounter}>Total</span>
+                <GeneralCounter totalBad={totaBad} />
+                <GeneralCounter totalGood={totalGood} />
+              </div>
+              <div style={{marginLeft: "1em"}}>
 
-              {isNewGrudgeModalOpen && (
-                <Portal>
-                  <NewGrudgePanel handleCloseModal={handleCloseNewGrudgeModal} />
-                </Portal>
-              )}
+                <Button text="Add New Grudge" icon={AddIcon} onClick={() => handleOpenNewGrudgeModal()} />
+
+                {isNewGrudgeModalOpen && (
+                  <Portal>
+                    <NewGrudgePanel handleCloseModal={handleCloseNewGrudgeModal} />
+                  </Portal>
+                )}
+              </div>
             </div>
+            <GrudgeList />
           </div>
-          <GrudgeList />
+          </useAppModelContext.Provider>
         </div>
       </div>
-    </div>
-    </useAppModelContext.Provider>
+    </>
   );
 }
 

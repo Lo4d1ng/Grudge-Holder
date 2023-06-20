@@ -11,7 +11,6 @@ interface Props{
 }
 
 const Button = ({text, icon, onClick, onlyHoverShadow = false} : Props) => {
- 
   return (
     <div className={`${buttonCSS.button} ${componentCSS.panel} ${onlyHoverShadow ? componentCSS.panelShadowOnHover : componentCSS.panelShadow }`} 
          onClick={onClick}

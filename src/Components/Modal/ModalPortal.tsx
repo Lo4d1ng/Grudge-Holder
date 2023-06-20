@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import componentCSS from '../Components.module.css';
 
 interface IChildren{
   children: React.ReactNode;
@@ -9,6 +8,7 @@ interface IChildren{
 const Portal = ({children} : IChildren) => {
   const mount = document.getElementById("portal-root");
   const el = document.createElement("div");
+  el.setAttribute('style', 'position: absolute;width: 100vw;height: 100vh;z-index:2;');
 
   useEffect(() => {
     if (mount) {
@@ -20,9 +20,7 @@ const Portal = ({children} : IChildren) => {
   }, [el, mount])
 
   return (
-    <div className={componentCSS.modal}>
-      {createPortal(children, el)}
-    </div>
+      createPortal(children, el)
   );
 };
 
