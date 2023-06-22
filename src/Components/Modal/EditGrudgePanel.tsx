@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import { ICounterBoxModel } from '../../Model/ICounterBoxModel';
 import Button from '../Button/Button'
 import AddIcon from '../../Images/add.png'
 import closeIcon from '../../Images/cross.svg'
@@ -19,7 +18,7 @@ const EditGrudgePanel = ({id, handleCloseModal} : IProps) => {
       if(!personNameRef.current) { return; }
 
       personNameRef.current.focus()
-      personNameRef.current.value = appModel?.allGrudgeBoxes.find(box => box.Id == id)?.PersonName ?? ""
+      personNameRef.current.value = appModel?.allGrudgeBoxes.find(box => box.Id === id)?.PersonName ?? ""
 
       appModel?.setIsFullScreenModalOpen(true)
 
@@ -29,9 +28,9 @@ const EditGrudgePanel = ({id, handleCloseModal} : IProps) => {
     function handleConfirm() {
         if(!personNameRef.current) { return; }
 
-        const updatedGrudgeBoxes = appModel?.allGrudgeBoxes.map((box) => ({...box, PersonName: box.Id == id ? personNameRef.current?.value ?? box.PersonName : box.PersonName}))
-        
-        if(updatedGrudgeBoxes != undefined)
+        const updatedGrudgeBoxes = appModel?.allGrudgeBoxes.map((box) => ({...box, PersonName: box.Id === id ? personNameRef.current?.value ?? box.PersonName : box.PersonName}))
+
+        if(updatedGrudgeBoxes !== undefined)
           appModel?.setGrudgeBoxes(updatedGrudgeBoxes)
 
         handleCloseModal();

@@ -1,5 +1,5 @@
-import { createContext, useContext } from "react";
-import IAppContextModel from "./Model/AppContextModel";
+import { createContext } from "react";
+import IAppContextModel from "./Model/IAppContextModel";
 
 const Context = createContext<IAppContextModel | undefined>(undefined)
 

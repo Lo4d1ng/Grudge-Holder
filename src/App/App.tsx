@@ -15,8 +15,8 @@ const App = () => {
   const [totalGood, setTotalGood] = useState<number>(0)
   const [totaBad, setTotalBad] = useState<number>(0)
 
+  //Modal
   const [isFullScreenModalOpen, setIsFullScreenModalOpen] = useState(false)
-  // New Grudge Modal Window
   const [isNewGrudgeModalOpen, setIsNewGrudgeModalOpen] = useState(false)
 
   const handleOpenNewGrudgeModal = () => {
@@ -51,7 +51,6 @@ const App = () => {
                 <GeneralCounter totalGood={totalGood} />
               </div>
               <div style={{marginLeft: "1em"}}>
-
                 <Button text="Add New Grudge" icon={AddIcon} onClick={() => handleOpenNewGrudgeModal()} />
 
                 {isNewGrudgeModalOpen && (
